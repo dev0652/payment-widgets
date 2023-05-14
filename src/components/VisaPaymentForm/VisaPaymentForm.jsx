@@ -1,7 +1,8 @@
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Button, Label, Form, ErrorMessage } from './VisaPaymentForm.styled';
+import { Button, Form } from './VisaPaymentForm.styled';
 
+import { FormField } from '../FormField/FormField';
 // #############################################################
 
 const initialValues = { cardHolder: '', cardNumber: '', cvv: '' };
@@ -36,25 +37,13 @@ export const VisaPaymentForm = () => {
         return (
           <Form>
             {/* Card holder */}
-            <Label>
-              <span>Card holder</span>
-              <Field name="cardHolder" type="text" />
-              <ErrorMessage name="cardHolder" component="span" />
-            </Label>
+            <FormField label="Card holder" name="cardHolder" />
 
             {/* Card number */}
-            <Label>
-              <span>Card number</span>
-              <Field name="cardNumber" type="number" />
-              <ErrorMessage name="cardNumber" component="span" />
-            </Label>
+            <FormField label="Card number" name="cardNumber" type="number" />
 
             {/* CVV */}
-            <Label>
-              <span>CVV</span>
-              <Field name="cvv" type="number" />
-              <ErrorMessage name="cvv" component="span" />
-            </Label>
+            <FormField label="CVV" name="cvv" type="number" />
 
             <Button type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Sending your payment' : 'Pay'}
