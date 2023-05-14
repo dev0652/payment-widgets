@@ -1,24 +1,18 @@
 import { Button } from './PaymentMethods.styled';
 import { paymentMethods } from '../../constants/paymentMethods';
 
-export const PaymentMethods = ({ selectedMethod, onSelect }) => {
+export const PaymentMethods = ({ selected, onSelect }) => {
   const { mastercard, visa, applepay } = paymentMethods;
 
   return (
     <>
-      <Button
-        selected={selectedMethod === mastercard}
-        onCLick={() => onSelect(mastercard)}
-      >
+      <Button selected={selected === mastercard} onClick={onSelect(mastercard)}>
         Mastercard
       </Button>
-      <Button selected={selectedMethod === visa} onCLick={() => onSelect(visa)}>
+      <Button selected={selected === visa} onClick={onSelect(visa)}>
         Visa
       </Button>
-      <Button
-        selected={selectedMethod === applepay}
-        onCLick={() => onSelect(applepay)}
-      >
+      <Button selected={selected === applepay} onClick={onSelect(applepay)}>
         Apple Pay
       </Button>
     </>

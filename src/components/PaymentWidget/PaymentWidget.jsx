@@ -20,17 +20,17 @@ export class PaymentWidget extends Component {
       selectPaymentMethod,
     } = this;
 
+    const { mastercard, visa, applepay } = paymentMethods;
+
     return (
       <Container>
         <PaymentMethods
-          selectedMethod={selectedMethod}
+          selected={selectedMethod}
           onSelect={selectPaymentMethod}
         />
-        {selectedMethod === paymentMethods.visa && <div>VisaForm</div>}
-        {selectedMethod === paymentMethods.mastercard && (
-          <div>MastercardForm</div>
-        )}
-        {selectedMethod === paymentMethods.applepay && <div>ApplepayForm</div>}
+        {selectedMethod === visa && <div>VisaForm</div>}
+        {selectedMethod === mastercard && <div>MastercardForm</div>}
+        {selectedMethod === applepay && <div>ApplepayForm</div>}
       </Container>
     );
   }
