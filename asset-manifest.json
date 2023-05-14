@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/payment-widgets/static/css/main.b5320759.css",
-    "main.js": "/payment-widgets/static/js/main.61206ba7.js",
+    "main.js": "/payment-widgets/static/js/main.60cb31eb.js",
     "index.html": "/payment-widgets/index.html",
     "main.b5320759.css.map": "/payment-widgets/static/css/main.b5320759.css.map",
-    "main.61206ba7.js.map": "/payment-widgets/static/js/main.61206ba7.js.map"
+    "main.60cb31eb.js.map": "/payment-widgets/static/js/main.60cb31eb.js.map"
   },
   "entrypoints": [
     "static/css/main.b5320759.css",
-    "static/js/main.61206ba7.js"
+    "static/js/main.60cb31eb.js"
   ]
 }
