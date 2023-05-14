@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { Container } from './PaymentWidget.styled';
+import { ButtonsWrapper, Container, FormWrapper } from './PaymentWidget.styled';
+
 import { PaymentMethods } from '../PaymentMethods/PaymentMethods';
 import { paymentMethods } from '../../constants/paymentMethods';
+
+import { VisaPaymentForm } from '../VisaPaymentForm/VisaPaymentForm';
 
 // ##############################################################
 
@@ -24,13 +27,18 @@ export class PaymentWidget extends Component {
 
     return (
       <Container>
-        <PaymentMethods
-          selected={selectedMethod}
-          onSelect={selectPaymentMethod}
-        />
-        {selectedMethod === visa && <div>VisaForm</div>}
-        {selectedMethod === mastercard && <div>MastercardForm</div>}
-        {selectedMethod === applepay && <div>ApplepayForm</div>}
+        <ButtonsWrapper>
+          <PaymentMethods
+            selected={selectedMethod}
+            onSelect={selectPaymentMethod}
+          />
+        </ButtonsWrapper>
+
+        <FormWrapper>
+          {selectedMethod === visa && <VisaPaymentForm />}
+          {selectedMethod === mastercard && <div>MastercardForm</div>}
+          {selectedMethod === applepay && <div>ApplepayForm</div>}
+        </FormWrapper>
       </Container>
     );
   }
