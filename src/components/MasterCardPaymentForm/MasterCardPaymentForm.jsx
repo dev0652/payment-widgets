@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import { paymentSchema } from 'validation';
 
-import { Button, Form } from './VisaPaymentForm.styled';
+import { Button, Form } from './MasterCardPaymentForm.styled';
 import { FormField } from 'components/FormField/FormField';
 
 // #############################################################
@@ -10,7 +10,7 @@ const initialValues = { cardHolder: '', cardNumber: '', cvv: '' };
 
 // #############################################################
 
-export const VisaPaymentForm = () => {
+export const MasterCardPaymentForm = () => {
   const handleSubmit = (values, actions) => {
     console.log(values);
     actions.isSubmitting(false);
@@ -19,7 +19,7 @@ export const VisaPaymentForm = () => {
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={paymentSchema}
+      // validationSchema={paymentSchema}
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (

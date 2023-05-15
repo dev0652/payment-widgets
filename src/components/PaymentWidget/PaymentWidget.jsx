@@ -6,6 +6,8 @@ import { paymentMethods } from '../../constants/paymentMethods';
 
 import { VisaPaymentForm } from '../VisaPaymentForm/VisaPaymentForm';
 
+import { MasterCardPaymentForm } from '../MasterCardPaymentForm/MasterCardPaymentForm';
+
 // ##############################################################
 
 export class PaymentWidget extends Component {
@@ -25,6 +27,8 @@ export class PaymentWidget extends Component {
 
     const { mastercard, visa, applepay } = paymentMethods;
 
+    // const { applepay, visa } = paymentMethods;
+
     return (
       <Container>
         <ButtonsWrapper>
@@ -36,7 +40,9 @@ export class PaymentWidget extends Component {
 
         <FormWrapper>
           {selectedMethod === visa && <VisaPaymentForm />}
-          {selectedMethod === mastercard && <div>MastercardForm</div>}
+
+          {selectedMethod === mastercard && <MasterCardPaymentForm />}
+
           {selectedMethod === applepay && <div>ApplepayForm</div>}
         </FormWrapper>
       </Container>
